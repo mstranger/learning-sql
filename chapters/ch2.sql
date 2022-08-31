@@ -1,4 +1,5 @@
--- Chapter 2.
+-- Chapter 2
+-- -------------
 
 -- Symbols types
 CHAR(20)        /* fix + spaces */
