@@ -1,4 +1,5 @@
 -- Chapter 3
+-- Basic queries
 -- -------------
 
 -- query may content max 6 blocks (clauses):
@@ -15,7 +16,7 @@ SELECT DISTINCT id from table_name;                        /* without duplicates
 --   created with CREATE TABLE
        SELECT field1, field2, field3 FROM table_name;
 --   temp tables created with subquery
-       SELECT e.field1, e.field2 FROM (SELECT field1, field2, field3 FROM table_name) as e;
+       SELECT e.field1, e.field2 FROM (SELECT field1, field2, field3 FROM table_name) AS e;
 --   virtual tables created with CREATE VIEW
        CREATE VIEW virtual_table_name AS
           SELECT field1, field2, field3 FROM table_name;
