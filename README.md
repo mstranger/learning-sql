@@ -2,5 +2,5 @@
 
 "Learning SQL" by Alan Beaulieu
 
-Bank database and examples. Adapted for Postgres.
+Bank database, notes, examples and tasks. Adapted for Postgres.
 
