@@ -35,7 +35,7 @@ SELECT DISTINCT open_emp_id FROM account
     WHERE open_branch_id = 2;
 
 -- Rules:
---   Order By only using first query columns
+--   Order By operator use only first query columns
 --   Operators order is important; or need using parentheses
 
 -- -------------
