@@ -57,10 +57,47 @@ FROM account a NATURAL JOIN customer c;
 -- Tasks:
 
 /* 10.1 */
+SELECT a.account_id, a.cust_id, p.product_cd, p.product_type_cd, a.avail_balance 
+FROM account a
+RIGHT OUTER JOIN product p ON a.product_cd = p.product_cd;
 
 /* 10.2 */
+SELECT a.account_id, a.cust_id, p.product_cd, p.product_type_cd, a.avail_balance
+FROM product p
+LEFT OUTER JOIN account a ON a.product_cd = p.product_cd;
 
 /* 10.3 */
+SELECT a.account_id, a.product_cd, i.fname, i.lname, b.name 
+FROM account a
+LEFT OUTER JOIN individual i ON a.cust_id = i.cust_id
+LEFT OUTER JOIN business b on a.cust_id = b.cust_id
+ORDER BY a.account_id;
 
 /* 10.4 */
+SELECT a.num + b.num + c.num AS res 
+FROM 
+    (SELECT 0 AS num 
+    UNION ALL SELECT 1 AS num
+    UNION ALL SELECT 2 AS num
+    UNION ALL SELECT 3 AS num
+    UNION ALL SELECT 4 AS num
+    UNION ALL SELECT 5 AS num
+    UNION ALL SELECT 6 AS num
+    UNION ALL SELECT 7 AS num
+    UNION ALL SELECT 8 AS num
+    UNION ALL SELECT 9 AS num) a
+CROSS JOIN 
+    (SELECT 0 AS num
+    UNION ALL SELECT 10 AS num
+    UNION ALL SELECT 20 AS num
+    UNION ALL SELECT 30 AS num
+    UNION ALL SELECT 40 AS num
+    UNION ALL SELECT 50 AS num
+    UNION ALL SELECT 60 AS num
+    UNION ALL SELECT 70 AS num
+    UNION ALL SELECT 80 AS num
+    UNION ALL SELECT 90 AS num) b
+CROSS JOIN
+    (SELECT 1 AS num) c
+ORDER BY res;
 
